@@ -1,12 +1,12 @@
 .body {
-  background: black
-  color: gray
+  background: black;
+  color: gray;
 }
 #school-end {
-  background-color: #131313
-  font-size: 16px
-  border-radius: 2px
-  color: white
-  padding: 12px 24px
+  background-color: #131313;
+  font-size: 16px;
+  border-radius: 2px;
+  color: white;
+  padding: 12px 24px;
   /*border: black 2px solid*/
 }
