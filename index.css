@@ -1,12 +1,26 @@
-.body {
+html, body {
   background: black;
   color: gray;
+  text-align: center;
 }
 #school-end {
+  color: gray;
+  text-decoration: none;
   background-color: #131313;
   font-size: 16px;
   border-radius: 2px;
-  color: white;
   padding: 12px 24px;
   /*border: black 2px solid*/
+}
+#conversion {
+  color: gray;
+  text-decoration: none;
+  background-color: #131313;
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 12px 24px;
+  /*border: black 2px solid*/
+}
+#block {
+  height: 30px;
 }
