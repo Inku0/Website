@@ -1,0 +1,9 @@
+body {
+    background-color: black;
+}
+#kool-title, #teisendamine-title {
+    color: gray;
+}
+.text-align {
+    text-align: center;
+}
