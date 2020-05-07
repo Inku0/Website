@@ -1,1 +1,1 @@
-/home/casa/lol/components/script/dist/script.bundle.js
+../components/script/dist/script.bundle.js
