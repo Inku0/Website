@@ -1,0 +1,60 @@
+body {
+  background-color: #393939 !important;
+  color: #f8f9fa !important;
+}
+.big-title {
+  background-color: #393939;
+  font-size: 50px;
+  color: #4ABC96;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 2.5% !important;
+}
+@media only screen and (max-width: 600px) {
+  .big-title {
+    margin-top: 25% !important;
+  }
+}
+.btn {
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-left: 5%;
+}
+.container {
+  text-align: center
+}
+.MuiInputLabel-formControl {
+    top: -10px !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4ABC96;
+    border-color: #4ABC96;
+    width: 40vh;
+}
+.btn:focus {
+  background-color: #4ABC96;
+}
+#root {
+  text-align: center;
+}
+.MuiInputBase-root {
+    color: white !important;
+}
+.MuiFormLabel-root {
+    color: white !important;
+}
+.MuiOutlinedInput-root {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: white !important;
+}
+.MuiSelect-icon {
+  color: white !important;
+}
+.MuiTypography-colorTextSecondary {
+    color: white !important;
+}
+/* pole vaja muretseda
+on küll*/

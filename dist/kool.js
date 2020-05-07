@@ -1,0 +1,1 @@
+/home/casa/lol/components/kool/dist/kool.bundle.js
