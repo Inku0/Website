@@ -19,7 +19,7 @@ const Selector = props => {
                     inputProps={{ name: props.data.populateType }}
                 >
                     <MenuItem value=''>
-                        <em>None</em>
+                        <em>Tühi</em>
                     </MenuItem>
                     {
                         props.data.populateType === 'mainSelector' ? (
