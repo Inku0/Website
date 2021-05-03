@@ -35,20 +35,20 @@ class Clock extends React.Component {
     return (
       <div className='kellad'>
         <div>
-        	<h4 className='kell-p'>Praegu</h4>
-        	<h2>
-        	<span>
-          {this.state.date.toLocaleTimeString('en-GB')}
-        	</span>
-        	</h2>
-        	<h4 className='kell-p'>Kool lõppeb</h4>
-        	<h2>
-          	<Countdown date = {this.state.koolLopp} />
-        	</h2>
-        	<h4 className='kell-p'>Kool algab</h4>
-        	<h2>
-        		<Countdown date = {this.state.koolAlgus} />
-        	</h2>
+          <h4 className='kell-p'>Praegu</h4>
+            <h2>
+              <span>
+                {this.state.date.toLocaleTimeString('en-GB')}
+              </span>
+            </h2>
+          <h4 className='kell-p'>Kool lõppeb</h4>
+            <h2>
+              <Countdown date = {this.state.koolLopp} />
+            </h2>
+          <h4 className='kell-p'>Kool algab</h4>
+            <h2>
+              <Countdown date = {this.state.koolAlgus} />
+            </h2>
         </div>
       </div>
     );
