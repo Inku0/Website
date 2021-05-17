@@ -1,0 +1,44 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "no",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-react-jsx": "^7.13.12",
+    "@babel/preset-env": "^7.14.2",
+    "@material-ui/core": "^4.11.4",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "bootstrap": "^4.4.1",
+    "convert-units": "^2.3.4",
+    "jquery": "^3.5.0",
+    "material-ui": "^0.20.2",
+    "moment": "^2.24.0",
+    "moment-locales-webpack-plugin": "^1.2.0",
+    "moment-timezone": "^0.5.28",
+    "popper.js": "^1.16.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-countdown": "^2.2.1",
+    "react-dom": "^16.13.1",
+    "react-moment": "^0.9.7",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inku0/Website.git"
+  },
+  "author": "Inku",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inku0/Website/issues"
+  },
+  "homepage": "https://github.com/Inku0/Website#readme"
+}

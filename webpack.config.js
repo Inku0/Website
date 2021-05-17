@@ -13,13 +13,14 @@ module.exports = {
       }),
   ],
     entry: {
-        kool: './src/teisendamine.js',
-        script: './src/kool.js'
+        kool: './src/kellad.js',
+        script: './src/kool.js',
+        teha: './src/teha.js'
     },
 
     output: {
         path: path.join(__dirname, 'components'),
-        filename: '[name]/dist/[name].bundle.js', // Hacky way to force webpack   to have multiple output folders vs multiple files per one path
+        filename: '[name].bundle.js', // Hacky way to force webpack   to have multiple output folders vs multiple files per one path
     },
 
     module: {
