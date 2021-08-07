@@ -17,8 +17,8 @@ body {
 }
 .btn {
   margin-top: 10%;
-  margin-left: 5%;
-  margin-left: 5%;
+  margin: 5%;
+  padding: 1rem;
 }
 .container {
   text-align: center
