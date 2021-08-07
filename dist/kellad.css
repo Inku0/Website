@@ -48,6 +48,8 @@ body {
   border-color:#4abc96;
   border-radius: 4.8px;
   padding: 15px;
+  width: 400px;
+  display: inline-block;
 }
 h2 {
   font-size: 400% !important;
