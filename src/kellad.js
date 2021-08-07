@@ -1,60 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom'
 import Countdown from "react-countdown";
 
-function getDate(year, day){
-  	var date = new Date(year, 0);
-  	return new Date(date.setDate(day));
-	}
 
-class Clock extends React.Component {
+const Clock2 = () => {
+	const [date, setDate] = useState(new Date());
+	const [koolLopp, setKoolLopp] = useState(1654506000000);
+	const [koolAlgus, setKoolAlgus] = useState(1630486800000);
 	
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: new Date(),
-      koolLopp: getDate(new Date().getFullYear(), 158),
-      koolAlgus: getDate(new Date().getFullYear(), 244)
-    };
-  }
+	useEffect(() => {
+  		var timerID = setInterval( () => tick(), 1000 );
+  		return function cleanup() {
+    		clearInterval(timerID);
+    	};
+ 	});
+ 	const tick = () => {
+ 		setDate(new Date());
+ 	}
+ 	useEffect(() => {
+  		console.log(`initializing interval`);
+  		const interval = setInterval(() => {
+  		  tick();
+  		}, 1000);
 
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {    this.setState({      date: new Date()    });  }
-
-  render() {
-    return (
+  		return () => {
+    		console.log(`clearing interval`);
+    		clearInterval(interval);
+  		};
+		}, []);
+		
+   return (
       <div className='kellad'>
         <div>
           <h4 className='kell-p'>Praegu</h4>
             <h2>
               <span>
-                {this.state.date.toLocaleTimeString('en-GB')}
+                {date.toLocaleTimeString('en-GB')}
               </span>
             </h2>
           <h4 className='kell-p'>Kool lõppeb</h4>
             <h2>
-              <Countdown date = {this.state.koolLopp} />
+              <Countdown date = {koolLopp} />
             </h2>
           <h4 className='kell-p'>Kool algab</h4>
             <h2>
-              <Countdown date = {this.state.koolAlgus} />
+              <Countdown date = {koolAlgus} />
             </h2>
         </div>
       </div>
     );
-  }
 }
 ReactDOM.render(
-  <Clock />,
+  <Clock2 />,
   document.getElementById('root')
 );
