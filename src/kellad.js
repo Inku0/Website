@@ -9,7 +9,7 @@ const Clock2 = () => {
 	const [koolAlgus, setKoolAlgus] = useState(1630486800000);
 	
 	useEffect(() => {
-  		var timerID = setInterval( () => tick(), 1000 );
+  		const timerID = setInterval( () => tick(), 1000 );
   		return function cleanup() {
     		clearInterval(timerID);
     	};
@@ -17,17 +17,6 @@ const Clock2 = () => {
  	const tick = () => {
  		setDate(new Date());
  	}
- 	useEffect(() => {
-  		console.log(`initializing interval`);
-  		const interval = setInterval(() => {
-  		  tick();
-  		}, 1000);
-
-  		return () => {
-    		console.log(`clearing interval`);
-    		clearInterval(interval);
-  		};
-		}, []);
 		
    return (
       <div className='kellad'>
