@@ -2,8 +2,6 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Grid from '@material-ui/core/Grid';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { etEE } from '@material-ui/core/locale';
 
 const InputField = props => {
     return (
