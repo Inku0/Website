@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { etEE } from '@material-ui/core/locale';
 import convert from 'convert-units';
 
 import Container from '@material-ui/core/Container';

@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 import Countdown from "react-countdown";
 
-
-const Clock2 = () => {
+const ClockImportantDates = () => {
 	const [date, setDate] = useState(new Date());
-	const koolLopp = 1655456400000
-	const koolAlgus = 1662021629000
-	const derekiSunna = 1647057600000
-	
-	useEffect(() => {
+    const importantDates = {
+	    koolLopp : 1655456400000,
+        koolAlgus: 1662021629000,
+        derekiSunna: 1647057600000
+    };
+
+    useEffect(() => {
   		const timerID = setInterval( () => tick(), 1000 );
   		return function cleanup() {
     		clearInterval(timerID);
     	};
  	});
+
  	const tick = () => {
  		setDate(new Date());
- 	}
+ 	};
 		
    return (
       <div className='kellad'>
@@ -30,21 +32,55 @@ const Clock2 = () => {
             </h2>
           <h4 className='kell-p'>Kool lõppeb</h4>
             <h2>
-              <Countdown date = {koolLopp} />
+              <Countdown date = {importantDates.koolLopp} />
             </h2>
           <h4 className='kell-p'>Kool algab</h4>
             <h2>
-              <Countdown date = {koolAlgus} />
+              <Countdown date = {importantDates.koolAlgus} />
             </h2>
           <h4 className='kell-p'>Dereki sünnipäev</h4>
             <h2>
-                <Countdown date = {derekiSunna} />
+                <Countdown date = {importantDates.derekiSunna} />
             </h2>
         </div>
       </div>
     );
+};
+
+const ClockVaheajad = () => {
+    const vaheajad = {
+        sugisvaheaeg: 1635109200000,
+        jouluvaheaeg: 1640210400000,
+        talvevaheaeg: 1645999200000,
+        kevadvaheaeg: 1650834000000,
+        suvevaheaeg: 1655154000000,
+    };
+
+    const findNearestVaheaeg = () => {
+        for (let value in Object.values(vaheajad)) {
+            if (+new Date(Object.values(vaheajad)[value]) > +new Date()) {
+                console.log(+new Date(Object.values(vaheajad)[value]));
+                return +new Date(Object.values(vaheajad)[value]);
+            }
+        }
+    };
+
+    return (
+        <div className='kellad'>
+            <div>
+                <h4 className='kell-p'>Lähim vaheaeg</h4>
+                <h2>
+                    <Countdown date = {findNearestVaheaeg()} />
+                </h2>
+            </div>
+        </div>
+    );
 }
+
 ReactDOM.render(
-  <Clock2 />,
+    <div>
+        <ClockImportantDates />
+        <ClockVaheajad />
+    </div>,
   document.getElementById('root')
 );
