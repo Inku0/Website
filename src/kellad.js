@@ -23,26 +23,32 @@ const ClockImportantDates = () => {
 		
    return (
       <div className='kellad'>
-        <div>
-          <h4 className='kell-p'>Praegu</h4>
-            <h2>
-              <span>
-                {date.toLocaleTimeString('en-GB')}
-              </span>
-            </h2>
-          <h4 className='kell-p'>Kool lõppeb</h4>
-            <h2>
-              <Countdown date = {importantDates.koolLopp} />
-            </h2>
-          <h4 className='kell-p'>Kool algab</h4>
-            <h2>
-              <Countdown date = {importantDates.koolAlgus} />
-            </h2>
-          <h4 className='kell-p'>Dereki sünnipäev</h4>
-            <h2>
-                <Countdown date = {importantDates.derekiSunna} />
-            </h2>
-        </div>
+          <div className={'kell-f'}>
+            <h4 className='kell-p'>Praegu</h4>
+              <h2>
+                <span>
+                  {date.toLocaleTimeString('en-GB')}
+                </span>
+              </h2>
+          </div>
+          <div className={'kell-f'}>
+            <h4 className='kell-p'>Kool lõppeb</h4>
+              <h2>
+                <Countdown date = {importantDates.koolLopp} />
+              </h2>
+          </div>
+          <div className={'kell-f'}>
+            <h4 className='kell-p'>Kool algab</h4>
+              <h2>
+                <Countdown date = {importantDates.koolAlgus} />
+              </h2>
+          </div>
+          <div className={'kell-f'}>
+            <h4 className='kell-p'>Dereki sünnipäev</h4>
+              <h2>
+                  <Countdown date = {importantDates.derekiSunna} />
+              </h2>
+            </div>
       </div>
     );
 };
@@ -67,18 +73,16 @@ const ClockVaheajad = () => {
 
     return (
         <div className='kellad'>
-            <div>
                 <h4 className='kell-p'>Lähim vaheaeg</h4>
                 <h2>
                     <Countdown date = {findNearestVaheaeg()} />
                 </h2>
-            </div>
         </div>
     );
 }
 
 ReactDOM.render(
-    <div>
+    <div className={'kellad-container'}>
         <ClockImportantDates />
         <ClockVaheajad />
     </div>,
