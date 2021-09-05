@@ -34,8 +34,6 @@ a {
   font-size: 50px;
   color: #4ABC96;
   text-align: center;
-  margin-bottom: 5%;
-  margin-top: 2.5% !important;
 }
 @media only screen and (max-width: 600px) {
   .big-title {

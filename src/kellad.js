@@ -73,10 +73,22 @@ const ClockVaheajad = () => {
 
     return (
         <div className='kellad'>
-                <h4 className='kell-p'>Lähim vaheaeg</h4>
-                <h2>
-                    <Countdown date = {findNearestVaheaeg()} />
-                </h2>
+            <h4 className='kell-p'>Sügisvaheajani</h4>
+            <h2>
+                <Countdown date = {vaheajad.sugisvaheaeg} />
+            </h2>
+            <h4 className='kell-p'>Jõuluvaheajani</h4>
+            <h2>
+                <Countdown date = {vaheajad.jouluvaheaeg} />
+            </h2>
+            <h4 className='kell-p'>Talvevaheajani</h4>
+            <h2>
+                <Countdown date = {vaheajad.talvevaheaeg} />
+            </h2>
+            <h4 className='kell-p'>Kevadvaheajani</h4>
+            <h2>
+                <Countdown date = {vaheajad.kevadvaheaeg} />
+            </h2>
         </div>
     );
 }
