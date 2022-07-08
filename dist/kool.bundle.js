@@ -1,1 +1,0 @@
-../components/kool.bundle.js
