@@ -1,2 +1,6 @@
 /node_for_later
 /.idea
+node_modules/
+.cache/
+public
+src/gatsby-types.d.ts
