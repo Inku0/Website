@@ -18,7 +18,7 @@ const IndexPage = () => {
         return (
             <div className={"mt-20 text-center"}>
                 <p className={"text-slate-100 text-center text-4xl mb-2"}>{props.label}</p>
-                <Countdown className={"inline-block text-center border-2 border-emerald-500 p-2 w-52 rounded-sm text-slate-100 text-3xl"} date={props.date} />
+                <Countdown className={"inline-block p-10 text-center border-2 border-emerald-500 p-10 w-72 rounded text-slate-100 text-4xl"} date={props.date} />
             </div>
         );
     }
@@ -31,7 +31,7 @@ const IndexPage = () => {
             <div className={"sm:flex sm:justify-evenly sm:flex-wrap"}>
                 <div className={"mt-20 text-center"}>
                     <p className={"text-slate-100 text-center text-4xl mb-2"}>Praegu</p>
-                    <span className={"inline-block text-center border-2 border-emerald-500 p-2 w-52 rounded-sm text-slate-100 text-3xl"}>{new Date().toLocaleTimeString('en-GB')}</span>
+                    <span className={"inline-block p-10 text-center border-2 border-emerald-500 p-10 w-72 rounded text-slate-100 text-4xl"}>{new Date().toLocaleTimeString('en-GB')}</span>
                 </div>
                 <Clock label={"Koolini"} date={`${currentYear}-09-01T12:00:00`} />
                 <Clock label={"Suveni"} date={`${currentYear + 1}-06-06T12:00:00`} />
