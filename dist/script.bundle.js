@@ -1,1 +1,0 @@
-../components/script.bundle.js

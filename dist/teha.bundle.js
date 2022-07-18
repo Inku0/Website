@@ -1,1 +1,0 @@
-../components/teha.bundle.js
