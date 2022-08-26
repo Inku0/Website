@@ -29,11 +29,11 @@ const IndexPage = () => {
             <title>Kellad</title>
             <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">Kellad</h1>
             <div className={"sm:flex sm:justify-evenly sm:flex-wrap"}>
+                <Clock label={"Koolini"} date={`${currentYear}-09-01T12:00:00`} />
                 <div className={"mt-20 text-center"}>
                     <p className={"text-slate-100 text-center text-4xl mb-2"}>Praegu</p>
                     <span className={"inline-block p-10 text-center border-2 border-emerald-500 p-10 w-72 rounded text-slate-100 text-4xl"}>{new Date().toLocaleTimeString('en-GB')}</span>
                 </div>
-                <Clock label={"Koolini"} date={`${currentYear}-09-01T12:00:00`} />
                 <Clock label={"Suveni"} date={`${currentYear + 1}-06-15T12:00:00`} />
                 <div className={"basis-full h-0"}></div>
                 <Clock label={"I vaheaeg"} date={`${currentYear}-10-24T00:00:00`} />
