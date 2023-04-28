@@ -23,7 +23,8 @@ const IndexPage = () => {
         );
     }
 
-    const currentYear = new Date().getFullYear();
+    const currentYear = (new Date().getFullYear() % 2 == 0) ? new Date().getFullYear() + 1: new Date().getFullYear();
+    console.log(`The year is ${currentYear}, Marty!`)
     return (
         <main className={"w-screen sm:h-screen bg-neutral-900 "}>
             <title>Kellad</title>
@@ -32,12 +33,12 @@ const IndexPage = () => {
                 <Clock label={"Koolini"} date={`${currentYear}-09-01T12:00:00`} />
                 <div className={"mt-20 text-center"}>
                     <p className={"text-slate-100 text-center text-4xl mb-2"}>Praegu</p>
-                    <span className={"inline-block p-10 text-center border-2 border-emerald-500 p-10 w-72 rounded text-slate-100 text-4xl"}>{new Date().toLocaleTimeString('en-GB')}</span>
+                    <span className={"inline-block p-10 text-center border-2 border-emerald-500 w-72 rounded text-slate-100 text-4xl"}>{new Date().toLocaleTimeString('en-GB')}</span>
                 </div>
-                <Clock label={"Suveni"} date={`${currentYear + 1}-06-15T12:00:00`} />
+                <Clock label={"Suveni"} date={`${currentYear}-06-14T00:00:00`} />
                 <div className={"basis-full h-0"}></div>
                 <Clock label={"I vaheaeg"} date={`${currentYear}-10-24T00:00:00`} />
-                <Clock label={"II vaheaeg"} date={`${currentYear}-12-22T00:00:00`} />
+                <Clock label={"II vaheaeg"} date={`${currentYear }-12-22T00:00:00`} />
                 <Clock label={"III vaheaeg"} date={`${currentYear + 1}-02-27T00:00:00`} />
                 <div className={"basis-full h-0"}></div>
                 <Clock label={"IV vaheaeg"} date={`${currentYear + 1}-04-24T00:00:00`} />
