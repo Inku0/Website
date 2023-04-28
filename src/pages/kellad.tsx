@@ -26,7 +26,7 @@ const IndexPage = () => {
     const currentYear = (new Date().getFullYear() % 2 == 0) ? new Date().getFullYear() + 1: new Date().getFullYear();
     console.log(`The year is ${currentYear}, Marty!`)
     return (
-        <main className={"w-screen sm:h-screen bg-neutral-900 "}>
+        <main className={"w-screen sm:h-screen bg-neutral-900"}>
             <title>Kellad</title>
             <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">Kellad</h1>
             <div className={"sm:flex sm:justify-evenly sm:flex-wrap"}>
