@@ -53,6 +53,7 @@ const TrainTimeGetter = () => {
             // when the data is ready, save it to state
             setSaueTallinn(saueTallinn);
             setTallinnSaue(tallinnSaue);
+            console.log(saueTallinn)
         };
 
         dataFetch();
@@ -65,8 +66,8 @@ const App = () => {
 
     const { saueTallinn, tallinnSaue } = TrainTimeGetter()
 
-    const Train = (props: { label: string }) => {
-        if (!saueTallinn || !tallinnSaue) return (
+    const Train = (props: { label: string, which: any }) => {
+        if (!props.which) return (
             <div className={"mt-20 text-center"}>
                 <TypeAnimation
                     className="text-5xl font-bold text-emerald-500 text-center pt-5"
@@ -89,8 +90,12 @@ const App = () => {
             </div>
         );
         else {
+            // push depTime:arrTime values to array?
+            for (let i = 0; i < props.which.journeys.length; i++) {
+                console.log(props.which.journeys[i].trips[0].departure_time)};
             return (
                 <div className={"mt-20 text-center"}>
+                    <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">{Array.isArray(props.which.disruption_messages) && props.which.disruption_messages.length ? "DISRUPTION DETECTED!" : null}</h1>
                     <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">{props.label}</h1>
                 </div>
             );
@@ -103,10 +108,10 @@ const App = () => {
             <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">Just a modicum of time...</h1>
             <div className={"justify-evenly sm:flex text-center"}>
                 <div>
-                    <Train label={"Saue → Tallinn"} />
+                    <Train label={"Saue → Tallinn"} which={saueTallinn}/>
                 </div>
                 <div>
-                    <Train label={"Tallinn → Saue"} />
+                    <Train label={"Tallinn → Saue"} which={tallinnSaue}/>
                 </div>
             </div>
         </main>
