@@ -68,7 +68,7 @@ const App = () => {
 
     const Train = (props: { label: string, which: any }) => {
         if (!props.which) return (
-            <div className={"mt-20 text-center"}>
+            <div className={"mt-10 text-center"}>
                 <TypeAnimation
                     className="text-5xl font-bold text-emerald-500 text-center pt-5"
                     sequence={[
@@ -90,32 +90,50 @@ const App = () => {
             </div>
         );
         else {
-            // push depTime:arrTime values to array?
+            const trainTimesArray = []
+            const Train = function (departureTime, arrivalTime, replacements, tripMessages, id) {
+                this.departureTime = departureTime;
+                this.arrivalTime = arrivalTime;
+                this.replacements = replacements;
+                this.tripMessages = tripMessages;
+                this.id = id
+            };
+            // add smth for replacement / trip messages
             for (let i = 0; i < props.which.journeys.length; i++) {
-                console.log(props.which.journeys[i].trips[0].departure_time)};
+                trainTimesArray.push(new Train(props.which.journeys[i].trips[0].departure_time, props.which.journeys[i].trips[0].arrival_time, props.which.journeys[i].trips[0].replacements, props.which.journeys[i].trips[0].trip_messages, props.which.journeys[i].trips[0].id))
+            }
+            const listItems = (trainTimesArray.map((train) => <li key={train.departureTime}>{train.departureTime.substring(11,16) + " → " + train.arrivalTime.substring(11,16) }</li>));
             return (
-                <div className={"mt-20 text-center"}>
-                    <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">{Array.isArray(props.which.disruption_messages) && props.which.disruption_messages.length ? "DISRUPTION DETECTED!" : null}</h1>
-                    <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">{props.label}</h1>
+                <div className={"mt-10 text-center"}>
+                    <h1 className="text-5xl font-bold text-emerald-500 text-center pt-2">{Array.isArray(props.which.disruption_messages) && props.which.disruption_messages.length ? "DISRUPTION DETECTED!" : null}</h1>
+                    <h1 className="text-5xl font-bold text-emerald-500 text-center pt-2">{props.label}</h1>
+                    <div>
+                        <ol className="text-2xl text-emerald-500 text-center pt-5">
+                            { listItems }
+                        </ol>
+                    </div>
                 </div>
             );
         };
-    }
+    };
 
     return (
-        <main className={"w-screen sm:h-screen bg-neutral-900"}>
+        <main className={"w-screen h-screen block overflow-auto bg-neutral-900"}>
             <title>Time...</title>
             <h1 className="text-5xl font-bold text-emerald-500 text-center pt-5">Just a modicum of time...</h1>
+            <h1 className="text-3xl font-bold text-emerald-500 text-center pt-10">kuupäiv om: {new Date().toISOString().slice(0, 10)}</h1>
             <div className={"justify-evenly sm:flex text-center"}>
                 <div>
                     <Train label={"Saue → Tallinn"} which={saueTallinn}/>
+                    <br />
                 </div>
                 <div>
                     <Train label={"Tallinn → Saue"} which={tallinnSaue}/>
+                    <br />
                 </div>
             </div>
         </main>
-    )
-}
+    );
+};
 
 export default App
