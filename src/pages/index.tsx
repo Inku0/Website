@@ -9,6 +9,7 @@ const IndexPage = () => {
         <a className={"text-slate-100 lg:mt-60 mt-32 rounded w-60 sm:w-96 text-center leading-6 text-2xl bg-emerald-500 space-x-4 p-4 sm:p-10"} href={"kellad"}>Kellad</a>
         <a className={"text-slate-100 lg:mt-60 mt-32 rounded w-60 sm:w-96 text-center leading-6 text-2xl bg-emerald-500 space-x-4 p-4 sm:p-10"} href={'https://wolfreealpha.on.fleek.co/input/index.html'}>Wolfree</a>
         <a className={"text-slate-100 lg:mt-60 mt-32 rounded w-60 sm:w-96 text-center leading-6 text-2xl bg-emerald-500 space-x-4 p-4 sm:p-10"} href={"elron"}>Rongikesed</a>
+	<a className={"text-slate-100 lg:mt-60 mt-32 rounded w-60 sm:w-96 text-center leading-6 text-2xl bg-emerald-500 space-x-4 p-4 sm:p-10"} href={'http://varuhus.ingvarruulib.com'}>Varuhuset</a>
       </div>
     </main>
   )
