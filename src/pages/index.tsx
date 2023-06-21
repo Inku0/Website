@@ -2,7 +2,7 @@ import * as React from "react";
 
 const IndexPage = () => {
   return (
-    <main className={"w-screen h-screen bg-neutral-900"}>
+    <main className={"w-screen sm:h-screen bg-neutral-900"}>
       <title>Inku ruulib!</title>
       <h1 className="text-7xl font-bold text-emerald-500 text-center pt-20">Wazzup, brochacho?</h1>
       <div className={"justify-evenly flex text-center lg:flex-row flex-col items-center"}>
