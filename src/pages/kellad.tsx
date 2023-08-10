@@ -23,7 +23,7 @@ const IndexPage = () => {
         );
     }
 
-    const currentYear = (new Date().getFullYear() % 2 == 0) ? new Date().getFullYear() + 1: new Date().getFullYear();
+    const currentYear = (new Date().getFullYear() % 2 == 0) ? new Date().getFullYear() + 1 : new Date().getFullYear();
     console.log(`The year is ${currentYear}, Marty!`)
     return (
         <main className={"w-screen sm:h-screen bg-neutral-900"}>
@@ -35,7 +35,7 @@ const IndexPage = () => {
                     <p className={"text-slate-100 text-center text-4xl mb-2"}>Praegu</p>
                     <span className={"inline-block p-10 text-center border-2 border-emerald-500 w-72 rounded text-slate-100 text-4xl"}>{new Date().toLocaleTimeString('en-GB')}</span>
                 </div>
-                <Clock label={"Suveni"} date={`${currentYear}-06-14T00:00:00`} />
+                <Clock label={"Suveni"} date={new Date().getTime() > new Date(`${currentYear}-06-14T00:00:00`).getTime() ? `${currentYear+1}-06-14T00:00:00` : `${currentYear}-06-14T00:00:00`} />
                 <div className={"basis-full h-0"}></div>
                 <Clock label={"I vaheaeg"} date={`${currentYear}-10-24T00:00:00`} />
                 <Clock label={"II vaheaeg"} date={`${currentYear }-12-22T00:00:00`} />
