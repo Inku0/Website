@@ -1,46 +1,15 @@
 {
-  "name": "ingvarruulib",
-  "version": "1.0.0",
-  "private": true,
-  "description": "ingvarruulib",
-  "author": "inku",
-  "keywords": [
-    "gatsby"
-  ],
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "gatsby": "^4.18.2",
-    "gatsby-plugin-image": "^2.18.1",
-    "gatsby-plugin-mdx": "^3.18.1",
-    "gatsby-plugin-react-helmet": "^5.18.0",
-    "gatsby-plugin-sharp": "^4.18.1",
-    "gatsby-plugin-sitemap": "^5.18.1",
-    "gatsby-source-filesystem": "^4.18.1",
-    "gatsby-transformer-sharp": "^4.18.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-helmet": "^6.1.0",
-    "react-type-animation": "^3.0.1",
-    "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.45",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "autoprefixer": "^10.4.7",
-    "gatsby-plugin-postcss": "^5.18.0",
-    "postcss": "^8.4.14",
-    "react-countdown": "^2.3.2",
-    "tailwindcss": "^3.1.6",
-    "typescript": "^4.7.4"
+    "astro": "^3.1.0"
   }
 }
