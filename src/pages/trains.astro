@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrainsApp from "../components/TrainsApp.tsx";
+---
+
+<Layout title="Inku ruulib!">
+    <body>
+        <h1 class="text-7xl font-bold text-emerald-500 text-center pt-20">hic sunt traines</h1>
+        <TrainsApp client:only="react" />
+    </body>
+</Layout>

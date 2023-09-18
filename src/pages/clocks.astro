@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RightNow from "../components/RightNow.tsx";
+import Clock from "../components/Clock.tsx";
+const currentYear = (new Date().getFullYear() % 2 == 0) ? new Date().getFullYear() + 1 : new Date().getFullYear();
+---
+
+<Layout title="Inku ruulib!">
+    <body>
+        <h1 class="text-5xl font-bold text-emerald-500 text-center pt-5">hic sunt kellad</h1>
+        <div class="sm:flex sm:justify-evenly sm:flex-wrap">
+            <Clock label={"Koolini"} date={new Date().getTime() > new Date(`${currentYear}-09-01T12:00:00`).getTime() ? `${currentYear+1}-09-01T12:00:00` : `${currentYear}-09-01T12:00:00`} client:only="react" />
+            <RightNow client:only="react" />
+            <Clock label={"Suveni"} date={new Date().getTime() > new Date(`${currentYear}-06-14T00:00:00`).getTime() ? `${currentYear+1}-06-14T00:00:00` : `${currentYear}-06-14T00:00:00`} client:only="react" />
+            <div class="basis-full h-0"></div>
+            <Clock label={"I vaheaeg"} date={`${currentYear}-10-24T00:00:00`} client:only="react" />
+            <Clock label={"II vaheaeg"} date={`${currentYear }-12-22T00:00:00`} client:only="react" />
+            <Clock label={"III vaheaeg"} date={`${currentYear + 1}-02-27T00:00:00`} client:only="react" />
+            <div class="basis-full h-0"></div>
+            <Clock label={"IV vaheaeg"} date={`${currentYear + 1}-04-24T00:00:00`} client:only="react" />
+        </div>
+    </body>
+</Layout>
