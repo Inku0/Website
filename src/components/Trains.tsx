@@ -1,9 +1,9 @@
 import {useState} from "react";
 
     const DataFetch = async () => {
-        let todayDate = new Date().toISOString().slice(0, 10);
+        let todayDate: string = new Date().toISOString().slice(0, 10);
         // waiting for allthethings in parallel
-        const result = (
+        const result: Promise<any>[] = (
             await Promise.all([
                 fetch(
                     "https://api.ridango.com/v2/64/intercity/stopareas/trips/direct",
@@ -34,7 +34,7 @@ import {useState} from "react";
                         })
                     })
             ])
-        ).map((r) => r.json());
+        ).map((r: Response) => r.json());
         // and waiting a bit more - fetch API is cumbersome
         const [saueTallinnResult, tallinnSaueResult] = await Promise.all(
             result

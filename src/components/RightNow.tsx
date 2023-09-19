@@ -1,8 +1,8 @@
-import * as React from "react";
+import {useState, useEffect} from "react";
 
-const RightNow = (props: { label: string, date: Date }) => {
-    const [_, setDate] = React.useState(new Date());
-    React.useEffect(() => {
+const RightNow = () => {
+    const [_, setDate] = useState(new Date());
+    useEffect(() => {
         const timerID: number = setInterval( () => tick(), 1000 );
         return function cleanup(): void {
             clearInterval(timerID);

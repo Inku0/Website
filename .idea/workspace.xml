@@ -9,15 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ba22e9a2-d629-4bd7-83a6-1939cc9f6bfd" name="Changes" comment="small changes + test whether ky has problems in localhost or generally">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RightNow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightNow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Trains.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Trains.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TrainsApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrainsApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/trains.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/trains.astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +111,7 @@
       <workItem from="1694958728512" duration="45000" />
       <workItem from="1694958774136" duration="2235000" />
       <workItem from="1694980533150" duration="9267000" />
-      <workItem from="1695105320174" duration="14374000" />
+      <workItem from="1695105320174" duration="17788000" />
     </task>
     <task id="LOCAL-00001" summary="fix (?) for year mishap + css">
       <created>1682705248594</created>
