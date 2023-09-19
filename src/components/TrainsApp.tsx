@@ -1,12 +1,34 @@
-import Trains from "./Trains.tsx";
+import DataFetch from "./Trains.tsx";
 import { TypeAnimation } from 'react-type-animation';
+import {useState} from "react";
 
 const App = () => {
+    const [saueTallinn, setSaueTallinn] = useState(null);
+    const [tallinnSaue, setTallinnSaue] = useState(null);
 
-    const { saueTallinn, tallinnSaue } = Trains()
-
+    type TrainType = {
+        departureTime: string;
+        arrivalTime: string;
+        replacements: Array<any>;
+        tripMessages: Array<any>;
+        id: number;
+    }
+    if (
+        sessionStorage.getItem("saueTallinn") == "undefined" ||
+        typeof sessionStorage.getItem("saueTallinn") == "object" &&
+        sessionStorage.getItem("tallinnSaue") == "undefined" ||
+        typeof sessionStorage.getItem("tallinnSaue") == "object"
+    ) {
+        DataFetch().then(r => {
+            setSaueTallinn(JSON.parse(sessionStorage.getItem("saueTallinn")))
+            setTallinnSaue(JSON.parse(sessionStorage.getItem("tallinnSaue")))
+        });
+    } else if (saueTallinn == null && tallinnSaue == null) {
+        setSaueTallinn(JSON.parse(sessionStorage.getItem("saueTallinn")))
+        setTallinnSaue(JSON.parse(sessionStorage.getItem("tallinnSaue")))
+    }
     const Train = (props: { label: string, which: any }) => {
-        if (!props.which) return (
+        if (saueTallinn == null && tallinnSaue == null) return (
             <div className={"mt-10 text-center"}>
                 <TypeAnimation
                     className="text-5xl font-bold text-emerald-500 text-center pt-5"
@@ -29,7 +51,7 @@ const App = () => {
             </div>
         );
         else {
-            const trainTimesArray: Array<any> = []
+            const trainTimesArray: Array<TrainType> = []
             const Train = function (this: any, departureTime: Date, arrivalTime: Date, replacements: Array<any>, tripMessages: Array<any>, id: number): void {
                 this.departureTime = departureTime;
                 this.arrivalTime = arrivalTime;
@@ -38,8 +60,15 @@ const App = () => {
                 this.id = id
             };
             // add smth for replacement / trip messages
-            for (let i: number = 0; i < props.which.journeys.length; i++) {
-                trainTimesArray.push(new Train(props.which.journeys[i].trips[0].departure_time, props.which.journeys[i].trips[0].arrival_time, props.which.journeys[i].trips[0].replacements, props.which.journeys[i].trips[0].trip_messages, props.which.journeys[i].trips[0].id))
+            for (let i: number = 0; i < props.which["journeys"].length; i++) {
+                const train: TrainType = {
+                    departureTime: props.which["journeys"][i]["trips"][0]["departure_time"],
+                      arrivalTime: props.which["journeys"][i]["trips"][0]["arrival_time"],
+                     replacements: props.which["journeys"][i]["trips"][0]["replacements"],
+                     tripMessages: props.which["journeys"][i]["trips"][0]["trip_messages"],
+                    id: props.which.journeys[i].trips[0].id,
+                };
+                trainTimesArray.push(train);
             }
             const listItems = (trainTimesArray.map((train) => <li key={train.departureTime}>{train.departureTime.substring(11,16) + " → " + train.arrivalTime.substring(11,16) }</li>));
             return (
