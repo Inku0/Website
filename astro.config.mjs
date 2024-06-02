@@ -7,5 +7,5 @@ import relativeLinks from "astro-relative-links";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind(), relativeLinks()],
-  outDir: '/var/www/ingvarruulib',
+  outDir: '/docker/appdata/swag/www',
 });

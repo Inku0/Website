@@ -14,12 +14,10 @@ const App = () => {
         id: number;
     }
     if (
-        sessionStorage.getItem("saueTallinn") === "undefined" ||
-        typeof sessionStorage.getItem("saueTallinn") === "object" &&
-        sessionStorage.getItem("tallinnSaue") === "undefined" ||
-        typeof sessionStorage.getItem("tallinnSaue") === "object"
+        (sessionStorage.getItem("saueTallinn") === "undefined" || typeof sessionStorage.getItem("saueTallinn") === "object") &&
+        (sessionStorage.getItem("tallinnSaue") === "undefined" || typeof sessionStorage.getItem("tallinnSaue") === "object")
     ) {
-        console.log("NEED GETTING")
+        console.log("Getting train times")
         DataFetch()
             .then((): void => {
             setSaueTallinn(JSON.parse(sessionStorage.getItem("saueTallinn")!))
@@ -28,12 +26,14 @@ const App = () => {
     } else {
         // @ts-ignore
         if (saueTallinn["empty"] === "empty" && tallinnSaue["empty"] === "empty") {
-                console.log("THEY EMPTY, TWEET")
+                console.log("Session storage empty, filling")
                 setSaueTallinn(JSON.parse(sessionStorage.getItem("saueTallinn")!))
                 setTallinnSaue(JSON.parse(sessionStorage.getItem("tallinnSaue")!))
             }
     }
+
     console.log(saueTallinn)
+
     const Train = (props: { label: string, which: any }) => {
         // @ts-ignore
         if (saueTallinn["empty"] === "empty" && tallinnSaue["empty"] === "empty") return (
@@ -89,8 +89,8 @@ const App = () => {
     return (
         <main className={"w-screen h-screen block overflow-auto bg-neutral-900"}>
             <title>Time...</title>
-            <h1 className="text-3xl font-bold text-emerald-500 text-center pt-10">hic sunt trāmina</h1>
-            <h1 className="text-3xl font-bold text-emerald-500 text-center pt-10">kuupäiv om: {new Date().toISOString().slice(0, 10)}</h1>
+            <h1 className="text-3xl font-bold text-emerald-500 text-center pt-10">Rongiajad</h1>
+            <h1 className="text-3xl font-bold text-emerald-500 text-center pt-10">Kuupäev: {new Date().toISOString().slice(0, 10)}</h1>
             <div className={"justify-evenly sm:flex text-center"}>
                 <div>
                     <Train label={"Saue → Tallinn"} which={saueTallinn}/>
