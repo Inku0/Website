@@ -41,7 +41,7 @@ const App = () => {
                 <TypeAnimation
                     className="text-5xl font-bold text-emerald-500 text-center pt-5"
                     sequence={[
-                        'patience',
+                        'Kannatust',
                         1000,
                     ]}
                     speed={50}
